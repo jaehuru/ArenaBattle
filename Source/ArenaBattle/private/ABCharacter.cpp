@@ -5,7 +5,7 @@
 #include "ABAnimInstance.h"
 #include "ABWeapon.h"
 #include "DrawDebugHelpers.h"
-#include "Engine/DamageEvents.h" //¸¦ ½á¾ß UE5¿¡¼­ FDamageEvent¸¦ »ç¿ë°¡´É. 
+#include "Engine/DamageEvents.h" //ë¥¼ ì¨ì•¼ UE5ì—ì„œ FDamageEventë¥¼ ì‚¬ìš©ê°€ëŠ¥. 
 
 // Sets default values
 AABCharacter::AABCharacter()
@@ -28,7 +28,7 @@ AABCharacter::AABCharacter()
 		GetMesh()->SetSkeletalMesh(SK_CARDBOARD.Object);
 	}
 
-	GetMesh()->SetAnimationMode(EAnimationMode::AnimationBlueprint);
+	GetMesh()->SetAnimationMode(EAnimationMode::AnimationBlueprint);  
 
 	static ConstructorHelpers::FClassFinder<UAnimInstance> WARRIOR_ANIM(TEXT("/Script/Engine.AnimBlueprint'/Game/Book/Animations/WarriorAnimBlueprint.WarriorAnimBlueprint_C'"));
 	if (WARRIOR_ANIM.Succeeded())
@@ -337,7 +337,7 @@ void AABCharacter::AttackCheck()
 
 	if (bResult)
 	{
-		if (HitResult.GetActor()) //UE5¿¡¼­´Â ·Î±×¹æ½Äµµ ´Ù¸§. Âü°í!
+		if (HitResult.GetActor()) //UE5ì—ì„œëŠ” ë¡œê·¸ë°©ì‹ë„ ë‹¤ë¦„. ì°¸ê³ !
 		{
 			ABLOG(Warning, TEXT("Hit Actor Name : %s"), *HitResult.GetActor()->GetName());
 		}
